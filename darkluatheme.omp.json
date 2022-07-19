@@ -1,0 +1,89 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "blocks": [
+    {
+      "alignment": "right",
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "#fff",
+          "background": "#007ACC",
+          "powerline_symbol": "\ue0b0",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "style": "mixed",
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "foreground": "#fff",
+          "background": "#335a73",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " 💻 {{.OS}} ",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "#1c1d21",
+          "foreground": "#f1184c",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "style": "mixed"
+          },
+          "style": "diamond",
+          "template": "🚀 {{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#3a3b3c",
+          "foreground": "#ffb03a",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": "<i> 📂 <b>{{ .Path }}</b></i> ",
+          "type": "path",
+          "properties": {
+            "folder_separator_icon": "/",
+            "style": "agnoster"
+          }
+        },
+        {
+          "background": "#1c1d21",
+          "foreground": "#0695f5",
+          "powerline_symbol": "\ue0b0 ",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#f1184c",
+          "style": "plain",
+          "template": " »",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
